@@ -15,7 +15,7 @@ void draw_borders(unsigned short total_rows) {
 	mvaddstr(total_rows, LEFT_EDGE, "                        ");
 }
 
-void draw_blocks(unsigned int *rows, unsigned short total_rows) {
+void draw_blocks(unsigned short *rows, unsigned short total_rows) {
 	for (int i=0; i<total_rows; i++) {
 		for (int j=0; j<10; j++) {
 			if (rows[i] & (1 << j))
@@ -24,6 +24,13 @@ void draw_blocks(unsigned int *rows, unsigned short total_rows) {
 			mvaddstr(i, LEFT_EDGE + 2 + (j * 2), "  ");
 		}
 	}
+}
+
+void draw_score(unsigned short score, unsigned short total_rows) {
+    attron(COLOR_PAIR(3));
+    move(total_rows + 1, LEFT_EDGE);
+    printw("Score:    %d", score);
+    attroff(COLOR_PAIR(3));
 }
 
 #endif
