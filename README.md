@@ -6,6 +6,8 @@ As its cheesy name suggests, this is a text-based version
 of the classic video game Tetris.  In case you don't know,
 Tetris is possibly the most iconic puzzle game of all time.
 Many systems had ports of it back in the 80s and 90s, and
+even today people are still building Tetris clones in tons
+of different languages and platforms.
 
 ## Technical details
 
