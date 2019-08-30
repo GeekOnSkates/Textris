@@ -1,1 +1,1 @@
-clear && gcc -o tetris main.c -lncurses
+clear && gcc -o ./bin/textris main.c -lncurses
