@@ -15,7 +15,8 @@ int main() {
     // Define a couple more game-related variables
     unsigned short score = 0;
     unsigned short piece[4];
-    set_piece(piece);
+    char pieceID = 1;
+    set_piece(piece, 1);
 
 	// Figure out how many rows the game should have
 	char total_rows = LINES - 2;
@@ -37,7 +38,14 @@ int main() {
         char input = getch();
         if (input == 27) break;
         score = input;
-        rotate_counter(piece);
+        if (input == 32) {
+            pieceID++;
+            if (pieceID == 7) pieceID = 0;
+            set_piece(piece, pieceID);
+        }
+        if (input == 102)
+            rotate_clockwise(piece);
+        else rotate_counter(piece);
     }
 
 	// Cleanup
